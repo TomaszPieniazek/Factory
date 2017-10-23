@@ -5,9 +5,13 @@ import factoryImplementation.XMLFactory;
 
 public class DAOFactoryProvider {
 	
-	      IFactory factory=null;
+	      private static IFactory factory=null;
+	      private DAOFactoryProvider() {
+	    	  
+	      }
 	      
-	      public IFactory setType(EFactory e){
+	      public static IFactory setType(EFactory e){
+	    	  
 	      if(e.equals(EFactory.XML)){
 	         factory=new XMLFactory();
 	         
@@ -17,8 +21,9 @@ public class DAOFactoryProvider {
 	      } else if(e.equals(EFactory.COS)){
 	         factory= new XMLFactory();
 	      }
-	      return factory;
+	      
+	      
+	    	  return factory;
 	      }
-	  
 
 }
