@@ -3,7 +3,7 @@ package factoryImplementation;
 import domain.Person;
 import factory.IFactory;
 
-public class XMLFactory implements IFactory{
+public class DBFactory implements IFactory {
 	@Override
 	public String getName() {
 		return Person.name;
@@ -11,7 +11,7 @@ public class XMLFactory implements IFactory{
 	
 	@Override
 	public void setName(String n) {
-		Person.name=n+"XML";	
+		Person.name=n+"DB";	
 	}
 
 	@Override
@@ -31,7 +31,7 @@ public class XMLFactory implements IFactory{
 
 	@Override
 	public void setCity(String c) {
-		Person.city=c+"XML";
+		Person.city=c+"DB";
 	}
 
 }

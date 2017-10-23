@@ -1,23 +1,24 @@
 package factory;
 
+import factoryImplementation.DBFactory;
 import factoryImplementation.XMLFactory;
 
 public class DAOFactoryProvider {
-	public IFactory getFactory(EFactory e){
-	      if(e.equals(null)){
-	         return null;
-	      }		
+	
+	      IFactory factory=null;
+	      
+	      public IFactory setType(EFactory e){
 	      if(e.equals(EFactory.XML)){
-	         return new XMLFactory();
+	         factory=new XMLFactory();
 	         
 	      } else if(e.equals(EFactory.DB)){
-	         return new XMLFactory();
+	         factory= new DBFactory();
 	         
 	      } else if(e.equals(EFactory.COS)){
-	         return new XMLFactory();
+	         factory= new XMLFactory();
 	      }
-	      
-	      return null;
-	   }
+	      return factory;
+	      }
+	  
 
 }
