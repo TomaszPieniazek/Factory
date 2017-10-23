@@ -3,7 +3,7 @@ package factory;
 import factoryImplementation.DBFactory;
 import factoryImplementation.XMLFactory;
 
-public class DAOFactoryProvider {
+public class DAOFactoryProvider implements IFactory{
 	
 	      private static IFactory factory=null;
 	      private DAOFactoryProvider() {
@@ -25,5 +25,35 @@ public class DAOFactoryProvider {
 	      
 	    	  return factory;
 	      }
+
+		@Override
+		public String getName() {
+			return factory.getName();
+		}
+
+		@Override
+		public void setName(String n) {
+			factory.setName(n);
+		}
+
+		@Override
+		public int getAge() {
+			return factory.getAge();
+		}
+
+		@Override
+		public void setAge(int a) {
+			factory.setAge(a);
+		}
+
+		@Override
+		public String getCity() {
+			return factory.getCity();
+		}
+
+		@Override
+		public void setCity(String c) {
+			factory.setCity(c);
+		}
 
 }

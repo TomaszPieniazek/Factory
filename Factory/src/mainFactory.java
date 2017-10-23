@@ -1,3 +1,4 @@
+import domain.Person;
 import factory.DAOFactoryProvider;
 import factory.EFactory;
 import factory.IFactory;
@@ -19,9 +20,10 @@ public class mainFactory {
 		f1.setCity("LODZ");
 		f1.setName("Jurand");
 		System.out.print("\n"+f1.getName()+" "+f1.getAge()+" "+f1.getCity());
-		
+		f2=DAOFactoryProvider.setType(EFactory.XML);
 		
 		System.out.print("\n"+f1+"\n"+f2);
+		
 	}
 
 }
