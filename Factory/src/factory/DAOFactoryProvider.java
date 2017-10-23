@@ -18,10 +18,7 @@ public class DAOFactoryProvider implements IFactory{
 	      } else if(e.equals(EFactory.DB)){
 	         factory= new DBFactory();
 	         
-	      } else if(e.equals(EFactory.COS)){
-	         factory= new XMLFactory();
-	      }
-	      
+	      } 
 	      
 	    	  return factory;
 	      }
@@ -55,5 +52,7 @@ public class DAOFactoryProvider implements IFactory{
 		public void setCity(String c) {
 			factory.setCity(c);
 		}
+
+	
 
 }
