@@ -1,25 +1,29 @@
 package factory;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import factoryImplementation.DBFactory;
 import factoryImplementation.XMLFactory;
 
 public class DAOFactoryProvider implements IFactory{
 	
 	      private static IFactory factory=null;
-	      private DAOFactoryProvider() {
-	    	  
-	      }
 	      
-	      public static IFactory setType(EFactory e){
-	    	  
+	      private static final Map<EFactory,IFactory> m = new HashMap<EFactory,IFactory>(){
+	    	  {put(EFactory.XML,new XMLFactory());
+	    	  put(EFactory.DB,new DBFactory());
+	      }};
+	      
+	      private DAOFactoryProvider() {}
+	      
+	      public static IFactory setType(EFactory e){	    	  
 	      if(e.equals(EFactory.XML)){
-	         factory=new XMLFactory();
+	         factory=m.get(EFactory.XML);
 	         
 	      } else if(e.equals(EFactory.DB)){
-	         factory= new DBFactory();
-	         
+	         factory=m.get(EFactory.DB);      
 	      } 
-	      
 	    	  return factory;
 	      }
 
