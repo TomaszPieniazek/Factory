@@ -11,7 +11,7 @@ public class mainFactory {
 		System.out.print(f1+" "+f2+" \n");
 		
 		f1.setAge(10);
-		f1.setCity("Spychów");
+		f1.setCity("Spychow");
 		f1.setName("Jurand");
 		System.out.print("\n"+f1.getName()+" "+f1.getAge()+" "+f1.getCity());
 		
